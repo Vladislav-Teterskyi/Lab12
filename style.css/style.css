@@ -615,9 +615,9 @@ input {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .wrapper {
-    max-width: 768px;
+    max-width: 400px;
     grid-template-columns: 1fr;
     grid-template-areas:
       "nav"
@@ -627,19 +627,23 @@ input {
       "reviews"
       "posts"
       "footer";
+
+      overflow: hidden;
   }
 
   nav {
     display: grid;
     grid-area: nav;
     grid-column: auto;
-    max-width: 768px;
+    max-width: 360px;
     grid-column: 1;
     grid-template-columns: 1fr 1fr;
   }
 
   .logo {
     margin-left: 16px;
+    font-size: 25px;
+    align-items: center;
   }
   .nav__left ul {
     z-index: 10;
@@ -654,7 +658,15 @@ input {
     border-radius: 8px;
   }
 
+  .nav__right a:nth-child(1), .nav__right a:nth-child(2) {
+    display: none;
+  }
+
   .nav__left ul.active {
+    display: flex;
+  }
+
+  .nav__right a:nth-child(1).active, .nav__right a:nth-child(2).active {
     display: flex;
   }
 
@@ -664,17 +676,31 @@ input {
 
   .nav__right {
     justify-content: end;
-    margin-right: 16px;
+    margin-right: 5px;
   }
 
   header {
     display: grid;
     grid-area: header;
     grid-column: auto;
-
-    max-width: 768px;
+    min-width: 360px;
+    max-width: 400px;
+    height: 334px;
   }
 
+  .header__content {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .header__content h2 {
+    font-size: 30px;
+    width: 328px;
+  }
+
+  .header__content p {
+    width: 232px;
+  }
   .selectbar {
     width: 300px;
   }
@@ -691,16 +717,59 @@ input {
   }
   .info {
     grid-area: info;
-    grid-column: auto;
-    max-width: 768px;
-    flex-wrap: wrap;
-    flex-direction: column;
+    grid-template-rows: repeat(2, 1fr) auto;
+    justify-content: start;
+    max-width: 400px;
+
+    padding: 0;
   }
+
+  .secondcolumn__wrraper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .firstcolumn {
+    width: 400px;
+  }
+
+  .secondcolumn p{
+    width: 400px;
+  }
+
+  .thirdcolumns {
+    grid-template-columns: 400px;
+    grid-template-rows: repeat(4, auto);
+
+    padding-left: 0;
+
+    justify-content: start;
+  }
+
+
+
+
   .offers {
     grid-area: offers;
     grid-column: auto;
+
+    grid-template-columns: 400px;
+    grid-template-rows: auto auto;
   }
 
+  .offers__columns {
+    grid-template-columns: 370px;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .offers__columns {
+    margin-top: 64px;
+  }
+
+  .offers__fcolumn:nth-child(1), .offers__fcolumn:nth-child(2), .offers__fcolumn:nth-child(3){
+    margin-left: 0px;
+    margin-top: 10px;
+  }
   .reviews {
     grid-area: reviews;
     grid-column: auto;
@@ -711,8 +780,97 @@ input {
     grid-column: auto;
   }
 
+  .reviews {
+
+    grid-template-columns: 400px;
+    grid-template-rows: auto auto auto;
+  }
+
+  .reviews__table {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .column:nth-child(2), .column:last-child {
+    margin-top: 50px;
+  }
+
+  .posts {
+
+    max-width: 400px;
+    grid-template-columns: 400px;
+    grid-template-rows: auto auto;
+  }
+
+  .posts__columns {
+    display: grid;
+    grid-template-columns: 328px;
+    grid-template-rows: repeat(3, auto);
+  }
+  
+  .posts__column:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .posts__column:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 20px;
+  }
+
+  .posts__column:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 20px;
+  }
 
   footer {
-    grid-column: auto;
+    grid-template-columns: 400px;
+    grid-template-rows: repeat(6, auto);
+
+    padding: 0 0 0 16px;
+  }
+
+  footer ul:nth-child(2) {
+    grid-row: 2;
+  }
+
+  footer ul:nth-child(3) {
+    grid-row: 3;
+  }
+  
+  footer ul:nth-child(4) {
+    grid-row: 4;
+  }
+
+  footer ul input {
+    width: 300px;
+  }
+
+  .linefot {
+    width: 360px;
+  }
+
+  footer .logo {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .underline__content {
+    display: grid;
+  }
+
+  .footer__links a{
+    margin-left: 10px;
+  }
+
+  .footer__links a:first-child {
+    margin-left: 0;
+  }
+
+  .designby {
+    margin-top: 10px;
+    order: 3;
   }
 }
