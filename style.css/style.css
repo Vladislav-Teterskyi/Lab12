@@ -1016,7 +1016,7 @@ input {
   }
 
   .offers__columns {
-    grid-template-columns: 410px;
+    grid-template-columns: 370px;
     grid-template-rows: repeat(3, auto);
   }
 
